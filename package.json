@@ -1,0 +1,42 @@
+{
+  "name": "booster-api",
+  "version": "0.0.0",
+  "description": "An API to enter new english words",
+  "private": false,
+  "scripts": {
+    "start": "node ./bin/www",
+    "debug": "NODE_ENV=development DEBUG=booster:* nodemon --inspect ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ignore-path .gitignore ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexiscrack3/booster-api.git"
+  },
+  "keywords": [
+    "booster",
+    "api"
+  ],
+  "author": "Alexis Ortega",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexiscrack3/booster-api/issues"
+  },
+  "homepage": "https://github.com/alexiscrack3/booster-api#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.2",
+    "mongoose": "^5.6.0",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "nodemon": "^1.19.1"
+  }
+}
