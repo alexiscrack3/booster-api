@@ -1,18 +1,18 @@
 const express = require('express');
-const WordRoutes = require('../app/routes/word');
+const EntryRoutes = require('../app/routes/entry');
 
 const indexRouter = express.Router();
-const wordRouter = express.Router();
+const entryRouter = express.Router();
 
 indexRouter.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
-wordRouter
-    .get('/', WordRoutes.getAll)
-    .get('/:id', WordRoutes.getById);
+entryRouter
+    .get('/', EntryRoutes.getAll)
+    .get('/:id', EntryRoutes.getById);
 
 module.exports = {
     '/': indexRouter,
-    '/words': wordRouter,
+    '/entries': entryRouter,
 };

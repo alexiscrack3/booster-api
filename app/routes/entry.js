@@ -1,10 +1,10 @@
-const WordController = require('../controllers/word');
+const EntryController = require('../controllers/entry');
 
 exports.getAll = (req, res) => {
-    WordController.getAll()
-        .then((words) => {
+    EntryController.getAll()
+        .then((entries) => {
             res.json({
-                data: words,
+                data: entries,
             });
         })
         .catch(() => {
@@ -18,27 +18,27 @@ exports.getAll = (req, res) => {
 };
 
 exports.getById = (req, res) => {
-    WordController.getById(req.params.id)
-        .then((word) => {
+    EntryController.getById(req.params.id)
+        .then((entry) => {
             res.json({
-                data: word,
+                data: entry,
             });
         })
         .catch(() => {
             res.status(404).json({
                 error: {
                     status: 404,
-                    message: 'Word not found.',
+                    message: 'Entry not found.',
                 },
             });
         });
 };
 
 exports.create = (req, res) => {
-    WordController.create(req.body)
-        .then((word) => {
+    EntryController.create(req.body)
+        .then((entry) => {
             res.json({
-                data: word,
+                data: entry,
             });
         })
         .catch(() => {

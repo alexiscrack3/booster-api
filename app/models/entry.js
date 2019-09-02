@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const wordSchema = new Schema({
+const entrySchema = new Schema({
     text: { type: String, required: true },
     pronunciation: String,
     definitions: [String],
 });
 
-const Word = mongoose.model('Word', wordSchema);
+const Entry = mongoose.model('Entry', entrySchema);
 
-module.exports = Word;
+module.exports = Entry;
