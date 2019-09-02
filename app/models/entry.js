@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const entrySchema = new Schema({
-    text: { type: String, required: true },
+    headword: { type: String, required: true },
+    class: { type: String, required: true, default: 'noun' },
     pronunciation: String,
     definitions: [String],
 });
