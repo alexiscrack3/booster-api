@@ -2,13 +2,14 @@
 const faker = require('faker');
 const Word = require('../../../app/models/word');
 
-const words = [
+const entries = [
 ];
 for (let index = 0; index < 10; index += 1) {
     const word = new Word({
         text: faker.random.word(),
+        definitions: [faker.random.words()],
     });
-    words.push(word);
+    entries.push(word);
 }
 
-module.exports = words;
+module.exports = entries;
