@@ -41,6 +41,10 @@ gem "rubocop", "~> 1.59"
 
 gem "rubocop-shopify", require: false
 
+gem "sorbet", group: :development
+gem "sorbet-runtime"
+gem "tapioca", require: false, group: :development
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: [:mri, :mswin, :mswin64, :mingw, :x64_mingw]
