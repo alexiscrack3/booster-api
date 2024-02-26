@@ -14,14 +14,13 @@ class Result
   attr_accessor :failure
 
   sig do
-    type_parameters(:V)
-      .params(
-        value: T.type_parameter(:V),
-        failure: T.nilable(Failure),
-      ).void
+    params(
+      value: V,
+      failure: T.nilable(Failure),
+    ).void
   end
   def initialize(value:, failure: nil)
-    @value = value
+    @value = T.let(value, Result::V)
     @failure = failure
   end
 
@@ -41,6 +40,9 @@ class Result
   end
 
   class << self
+    extend T::Sig
+
+    sig { returns(T.attached_class) }
     def empty
       new(value: nil, failure: nil)
     end
