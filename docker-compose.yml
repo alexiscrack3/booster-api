@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:16.1
+    container_name: db
+    restart: always
+    environment:
+      # - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    networks:
+      - data-network
+    volumes:
+      - data-volume:/var/lib/pgsql/data
+
+networks:
+  data-network:
+    driver: bridge
+
+volumes:
+  data-volume:
+    driver: local
