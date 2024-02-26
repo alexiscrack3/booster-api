@@ -1,0 +1,4 @@
+{
+    "rubyLsp.rubyVersionManager": "rvm",
+    "rubyLsp.formatter": "auto",
+}
