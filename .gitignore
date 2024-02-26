@@ -31,3 +31,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Debug log for Sorbet maintainers
+sorbet/rbi/hidden-definitions/errors.txt
