@@ -24,6 +24,7 @@ m = Module.new do
   def cli_arg_version
     return unless invoked_as_script? # don't want to hijack other binstubs
     return unless "update".start_with?(ARGV.first || " ") # must be running `bundle update`
+
     bundler_version = nil
     update_index = nil
     ARGV.each_with_index do |a, i|
@@ -55,8 +56,10 @@ m = Module.new do
 
   def lockfile_version
     return unless File.file?(lockfile)
+
     lockfile_contents = File.read(lockfile)
     return unless lockfile_contents =~ /\n\nBUNDLED WITH\n\s{2,}(#{Gem::Version::VERSION_PATTERN})\n/
+
     Regexp.last_match(1)
   end
 
