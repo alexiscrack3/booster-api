@@ -13,6 +13,7 @@ default: &default
   password: <%= ENV["POSTGRES_PASSWORD"] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  gssencmode: disable # https://github.com/ged/ruby-pg/issues/311#issuecomment-1615084569
 
 development:
   <<: *default
