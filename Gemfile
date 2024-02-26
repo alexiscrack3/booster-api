@@ -51,6 +51,10 @@ group :development, :test do
   gem "faker", "~> 3.2", groups: [:development, :test]
 end
 
+group :test do
+  gem "mocha", "~> 2.1"
+end
+
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
